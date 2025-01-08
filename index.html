@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P3-M25</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+     <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const step4Activity3 = document.querySelector('#activity-3 .step-4');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'none';
+            } else {
+                 if (activity2) activity2.style.display = 'block';
+                  if (step4Activity3) step4Activity3.style.display = 'table-row';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P3-M25</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <!-- Aquí se insertarán las actividades -->
+         <!-- Actividad 0 -->
+        <div id="activity-0" class="activity" data-time="N/A">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+                  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                   <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Verificación inicial del equipo y materiales necesarios para completar la misión.
+                </div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr>
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                            Verificar que todos los dispositivos (tabletas o computadoras) estén encendidos, conectados a internet y que el editor de MakeCode esté abierto en modo "Crear". Confirmar que los Microbits estén disponibles, que los proyectos de la clase anterior estén guardados, y que el espacio esté organizado para trabajar cómodamente. Verificar que las baterías estén cargadas.
+                        </td>
+                        <td style="padding: 10px; vertical-align: top;">No se utiliza diálogo con los estudiantes en esta etapa.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity" data-time="2">
+            <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Bienvenida al grupo, agradecimiento y presentación de los objetivos del día.
+                </div>
+            </div>
+            <div id="activity_1_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                         <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                         <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                     </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar (Diapositiva 1): "¡Bienvenidos, Genios de la Innovación!" y saludar a los estudiantes con entusiasmo, mencionando el tema del día.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Hola, Genios de la Innovación! 🌟 ¡Qué emoción verlos listos para transformar sus cronómetros en creaciones increíbles! Hoy vamos a mejorar nuestros proyectos, agregar nuevas funcionalidades y prepararnos para presentarlos al mundo como verdaderos innovadores. ¡Prepárense para crear, mejorar y brillar!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0,5 minutos):</strong> Proyectar (Diapositiva 2): "¡Mi Nivel de Innovación!" y pedir a los estudiantes que indiquen su estado de ánimo usando poses temáticas relacionadas con la innovación.</td>
+                         <td style="padding: 10px; vertical-align: top;">Antes de comenzar, ¡necesito saber cómo se sienten mis genios de la innovación! 💡 Si están listos para transformar sus cronómetros, ¡levanten los brazos como si fueran ideas brillantes que están a punto de explotar! ✨ Si necesitan un poquito más de energía, ¡crucen los brazos como si estuvieran afinando sus presentaciones con un micrófono! 🎤 ¡A ver esas poses llenas de innovación y creatividad!</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0,5 minutos):</strong> Proyectar (Diapositiva 3): "¡Ritual de Gratitud Innovadora!" y guiar a los estudiantes en el ritual.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Excelente, Genios! Ahora, ¡es momento de nuestro ritual Gnius! Juntemos nuestras manos y digamos juntos: '¡Gracias por estar aquí, Genios! Hoy vamos a transformar nuestros cronómetros y a compartirlos con el mundo como verdaderos innovadores. ¡A dar lo mejor de nosotros y a divertirnos creando!</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0,5 minutos):</strong> Proyectar (Diapositiva 4): "¡Objetivos de Innovación de Hoy!" y explicar los objetivos de la misión de manera clara y sencilla.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Y ahora, los objetivos de nuestra misión de hoy! 1. Vamos a practicar cómo analizar nuestros cronómetros, identificar áreas de mejora y optimizar su funcionalidad. 2. ¡Vamos a agregar nuevas funcionalidades, crear pantallas interactivas y prepararnos para presentar nuestros proyectos como verdaderos laboratorios de innovación! ¿Listos para este reto innovador?</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 2 -->
+        <div id="activity-2" class="activity" data-time="4">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 4 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Actividad física para activar la mente innovadora.
+                </div>
+            </div>
+            <div id="activity_2_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 5): "¡Activando Nuestra Mente Innovadora!" y explicar que combinarán movimientos y representaciones de la innovación para activar el cerebro.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Hola, Genios de la Innovación! 🚀 Vamos a activar nuestros cerebros para transformar nuestros cronómetros. Hoy combinaremos movimiento y representaciones de la innovación para preparar nuestras mentes para crear proyectos increíbles. ¿Listos para activar su mente innovadora?</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1,5 minutos):</strong> Proyectar (Diapositiva 6): "¡Mi Secuencia de Innovación con Lógica!" y dar las instrucciones para la creación de la secuencia con movimientos.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Ahora vamos a crear nuestra propia secuencia de movimientos que representen el proceso de innovación! Piensen en cómo transforman sus ideas en proyectos y cómo los presentan al mundo. Por ejemplo, pueden simular: cómo generan una idea brillante, cómo la transforman en un proyecto, cómo la mejoran, o cómo la presentan al público. Piensen en al menos tres movimientos que representen la acción y las decisiones lógicas que toman durante el proceso de innovación, luego muéstrenmelos. ¡A crear con la lógica y la innovación!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1,5 minutos):</strong> Proyectar (Diapositiva 7): "¡La Innovación en Acción!" y pedir a los estudiantes que realicen su secuencia de movimientos y describan el proceso de innovación y las decisiones lógicas que están representando.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Impresionante, Genios! Ahora, uno por uno, muéstrenme su secuencia de movimientos mientras describen brevemente el proceso de innovación y las decisiones lógicas que representa. ¡Compartan sus simulaciones innovadoras y prepárense para practicar sus proyectos con lógica, creatividad y presentación en MakeCode!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 3 -->
+        <div id="activity-3" class="activity" data-time="31">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 31 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Transformar los cronómetros con nuevas funcionalidades utilizando MakeCode.
+                </div>
+            </div>
+            <div id="activity_3_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1,00 minuto):</strong> Proyectar (Diapositiva 8): "¡El Gran Desafío de Innovación!" y presentar el desafío con la temática unificada, los nombres de los retos y los tres niveles (Rookie, Master, Hacker).</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios de la Innovación, ha llegado el momento de transformar sus cronómetros y presentarlos al mundo! 🚀 Hoy vamos a hacer magia con la programación, la creatividad y la presentación de proyectos. Tenemos tres desafíos emocionantes: '¡Optimización Funcional!' (Rookie), '¡Añadiendo Nuevas Funcionalidades!' (Master) y '¡Sistema de Cronometría Inteligente!' (Hacker). ¡A elegir su reto innovador y a transformar sus cronómetros!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (2 minutos):</strong> Proyectar (Diapositiva 9): "¡Detalles de los Retos de Innovación!" Describir los pasos y metas específicas de cada nivel, utilizando el texto original y resaltando en negrita las partes clave: Objetivo, Instrucciones, Condiciones y Consejo.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Aquí están los detalles de cada desafío para que elijan su camino!
+                            <br><br>
+                            <strong>Nivel Rookie (Básico): 'Optimización Funcional'</strong>
+                            <br>
+                            <strong>Nombre del Reto:</strong> '¡Hazlo Mejor!'
+                             <br>
+                            <span style="color: red; font-weight: bold;">Objetivo:</span> Identificar un aspecto básico del proyecto inicial y mejorar su funcionalidad.
+                             <br>
+                             <span style="color: red; font-weight: bold;">Instrucciones:</span> Analiza el proyecto original y elige una función que pueda ser optimizada (por ejemplo, mayor precisión, mejor interfaz o uso eficiente de energía). Mejora esa función, implementando pequeños cambios en el código o en la estructura física del proyecto. Documenta el cambio realizado y cómo afecta el desempeño del proyecto. Presenta la funcionalidad mejorada a la clase en un minuto, explicando el antes y después.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Condiciones:</span> El cambio debe ser medible o claramente observable.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Consejo:</span> Empieza con una pequeña mejora que sea fácil de implementar pero marque una diferencia notable.
+                            <br><br>
+                            <strong>Nivel Master (Intermedio): 'Añadiendo Nuevas Funcionalidades'</strong>
+                            <br>
+                            <strong>Nombre del Reto:</strong> '¡Expande tu Creación!'
+                             <br>
+                            <span style="color: red; font-weight: bold;">Objetivo:</span> Incorporar al menos una nueva funcionalidad interactiva al proyecto original.
+                            <br>
+                             <span style="color: red; font-weight: bold;">Instrucciones:</span> Identifica una función que complemente o amplíe el propósito del proyecto (por ejemplo, agregar un sensor extra, implementar una nueva salida visual o sonora, o incorporar un control adicional). Diseña e implementa la nueva funcionalidad en el proyecto. Asegúrate de que la nueva funcionalidad se integre sin afectar las características existentes. Presenta el proyecto actualizado, destacando cómo la nueva funcionalidad mejora la experiencia o utilidad del dispositivo.
+                             <br>
+                             <span style="color: red; font-weight: bold;">Condiciones:</span> La nueva función debe ser interactiva y responder a una acción o entrada.
+                            <br>
+                             <span style="color: red; font-weight: bold;">Consejo:</span> Prueba la nueva función de forma aislada antes de integrarla completamente en el proyecto.
+                            <br><br>
+                             <strong>Nivel Hacker (Avanzado): 'Sistema de Cronometría Inteligente'</strong>
+                             <br>
+                             <strong>Nombre del Reto:</strong> '¡El Control Total del Tiempo!'
+                             <br>
+                            <span style="color: red; font-weight: bold;">Objetivo:</span> Diseñar un cronómetro avanzado con múltiples funcionalidades gestionadas exclusivamente a través del Micro:bit.
+                            <br>
+                             <span style="color: red; font-weight: bold;">Instrucciones:</span> Rediseña tu proyecto para incluir las siguientes funcionalidades: Modo Cronómetro: Mide el tiempo transcurrido y muestra los resultados al finalizar. Modo Temporizador: Permite al usuario establecer un tiempo inicial y cuenta hacia atrás, emitiendo una señal visual al llegar a cero. Registro de Vueltas (Laps): Permite guardar tiempos intermedios mientras el cronómetro sigue activo. Implementa un sistema de navegación de menús en la pantalla LED del Micro:bit para seleccionar entre las funcionalidades usando los botones A y B. Permite cambiar entre modos sin reiniciar el dispositivo y garantiza que cada modo funcione de manera independiente. Presenta el sistema mostrando cómo cada funcionalidad es útil en diferentes escenarios.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Condiciones:</span> Los botones A y B deben controlar toda la interacción del sistema (selección de modos, inicio/detención, etc.). La navegación por los menús debe ser clara y comprensible. Las funcionalidades deben ejecutarse sin conflictos.
+                            <br>
+                            <span style="color: red; font-weight: bold;">Consejo:</span> Divide el proyecto en funciones separadas para cada modo y prueba cada una individualmente antes de combinarlas en el sistema final.</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (20 minutos):</strong> Proyectar (Diapositiva 10): "¡A Innovar y Transformar, Genios!" Temporizador de 20 minutos con recordatorio de los niveles y la temática.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Es su turno, genios de la innovación! 🚀 Tienen 20 minutos para transformar sus cronómetros y prepararlos para su gran presentación. Recuerden los nombres de sus retos y dejen que su creatividad guíe sus proyectos. ¡La magia de la innovación está en sus manos!</td>
+                    </tr>
+                     <tr class="step-4" >
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (5 minutos):</strong> Proyectar (Diapositiva 11): "¡Cargando la Magia de la Innovación!" Explicación de cómo conectar y transferir el código a Micro:bit, con instrucciones separadas para computadora y iPad.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios de la innovación, llegó el momento de cargar su magia a Micro:bit! 💻 Si están en una computadora: Conecten su Micro:bit con el cable USB. Descarguen el archivo .hex generado por MakeCode. Arrastren el archivo .hex a su Micro:bit. 📱 Si están en un iPad: Conecten su Micro:bit por Bluetooth. Sigan las instrucciones de MakeCode para transferir el programa. ¡A cargar su magia y a ver sus cronómetros innovados en acción!</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (3 minutos):</strong> Proyectar (Diapositiva 12): "¡Micro:bit en Acción de Innovación!" Temporizador de 3 minutos para transferir los programas.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Tienen 3 minutos para cargar sus programas a Micro:bit y ver cómo funcionan sus creaciones innovadoras! ⏱️ ¡A programar y a encender la magia de la innovación!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (1 minuto):</strong> Proyectar (Diapositiva 13): "¡Misión de Innovación Cumplida, Genios!" Revisar los objetivos específicos del desafío con los estudiantes, según cada nivel y reto.</td>
+                        <td style="padding: 10px; vertical-align: top;">Hagamos un último chequeo: ¿Lograron analizar sus cronómetros, identificar áreas de mejora y optimizar su funcionalidad? ¿Agregaron nuevas funcionalidades, crearon pantallas interactivas y se prepararon para presentar sus proyectos como verdaderos laboratorios de innovación? ¡Estoy seguro de que superaron todas las expectativas! ¡Felicidades, genios de la innovación!”</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 4 -->
+        <div id="activity-4" class="activity" data-time="10">
+            <div class="banner" onclick="toggleContent('activity_4_content')">
+                <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 10 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Práctica de presentaciones usando la metodología Think-Pair-Share.
+                </div>
+            </div>
+            <div id="activity_4_content" class="content">
+                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 14): "¡Uniendo Voces Innovadoras!" Mostrar instrucciones para formar parejas dentro de cada equipo y explicar que trabajarán con la metodología Think-Pair-Share, enfocándose en la reflexión y la práctica de la presentación dentro del equipo.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios de la innovación, es hora de unir nuestras voces y prepararnos para la presentación! 🌟 Formen equipos y prepárense para trabajar con la metodología Think-Pair-Share. ¡Juntos vamos a reflexionar sobre nuestras mejoras y a practicar nuestras presentaciones para mostrar nuestros increíbles cronómetros dentro de nuestro equipo!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar (Diapositiva 15): "¡Equipos de Presentación en 30 Segundos!" Temporizador de 30 segundos para formar los equipos.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Tienen 30 segundos para unirse a sus compañeros de presentación! ⏱️ Busquen sus equipos rápidamente y prepárense para una lluvia de ideas y mucha práctica. ¡Equipos listos, presentaciones listas!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar (Diapositiva 16): "¡Think-Pair-Share: Presentaciones Innovadoras en Equipo!" Explicar los pasos de la metodología: pensar individualmente en las mejoras y la presentación, compartir y practicar la presentación con su pareja dentro del mismo equipo y prepararse para las presentaciones individuales.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Programadores de la innovación, vamos a usar el poder del Think-Pair-Share para preparar nuestras presentaciones dentro de nuestro equipo! 💡 Primero, piensen individualmente en cómo mejorarían su cronómetro y cómo lo presentarán. Luego, compartan esas ideas y practiquen su presentación con su pareja dentro del mismo equipo. Finalmente, prepárense para realizar sus presentaciones individuales a sus compañeros de equipo. ¡Prepárense para brillar con sus creaciones dentro de su propio laboratorio de innovación!</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Proyectar (Diapositiva 17): "¡Preparando la Presentación en Pareja - Parte 1!" Temporizador de 2 minutos para la reflexión individual y la práctica de la presentación en parejas dentro de cada equipo, enfocándose en la preparación para la primera presentación individual.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Manos a la obra, genios de la presentación! ⏱️ Tienen 2 minutos para reflexionar sobre sus mejoras, practicar su presentación con su pareja dentro de su equipo y prepararse para su presentación individual. Recuerden que una buena presentación es clave para mostrar el valor de sus proyectos. ¡Practiquen, colaboren y prepárense para brillar!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (2 minutos):</strong> Proyectar (Diapositiva 18): "¡Presentando la Innovación en Equipo - Parte 1!" Tiempo para que el primer estudiante de cada equipo presente su proyecto mejorado y reciba feedback de sus compañeros de equipo.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Es hora de brillar, genios de la innovación! 🌟 El primer estudiante de cada equipo presentará su proyecto y sus mejoras y recibirá feedback de sus compañeros de equipo. Recuerden que compartir nuestras ideas y aprender de los demás es clave en el camino de la innovación. ¡Prepárense para inspirar y ser inspirados!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (2 minutos):</strong> Proyectar (Diapositiva 19): "¡Preparando la Presentación en Pareja - Parte 2!" Temporizador de 2 minutos para la práctica de la presentación en parejas dentro de cada equipo, preparándose para la presentación individual del segundo estudiante.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Es hora de practicar de nuevo, genios de la presentación! ⏱️ Tienen 2 minutos para practicar su presentación con su pareja dentro de su equipo, preparándose para su presentación individual. Recuerden que una buena presentación es clave para mostrar el valor de sus proyectos. ¡Practiquen y prepárense para brillar!</td>
+                    </tr>
+                      <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 7 (2 minutos):</strong> Proyectar (Diapositiva 20): "¡Presentando la Innovación en Equipo - Parte 2!" Tiempo para que el segundo estudiante de cada equipo presente su proyecto mejorado y reciba feedback de sus compañeros de equipo.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Es hora de brillar, genios de la innovación! 🌟 El segundo estudiante de cada equipo presentará su proyecto y sus mejoras, y recibirá feedback de sus compañeros de equipo. Recuerden que compartir nuestras ideas y aprender de los demás es clave en el camino de la innovación. ¡Prepárense para inspirar y ser inspirados!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 8 (1 minuto):</strong> Proyectar (Diapositiva 21): "¡Reflexiones de Presentación en Equipo!" Preguntas para reflexionar sobre la experiencia de trabajar en equipo con la metodología Think-Pair-Share y las presentaciones individuales realizadas dentro de cada equipo, enfocándose en cómo la práctica en pareja y la retroalimentación mejoraron la presentación.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Reflexionemos sobre esta aventura de preparación y presentación en equipo! 🌟 ¿Qué aprendieron al trabajar con la metodología Think-Pair-Share dentro de su equipo? ¿Cómo los ayudó la práctica en pareja a mejorar su presentación individual? ¿Qué fue lo más útil del feedback de sus compañeros para perfeccionar su presentación? ¿Qué consejo le darían a otros programadores de la innovación sobre la preparación de presentaciones? ¡Compartan sus ideas y celebremos el poder de la práctica, la presentación y la colaboración dentro de sus laboratorios de innovación!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <div id="activity-5" class="activity" data-time="4">
+            <div class="banner" onclick="toggleContent('activity_5_content')">
+                <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 4 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Reflexión final y organización del espacio de trabajo.
+                </div>
+            </div>
+             <div id="activity_5_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 22): "¡Misión de Innovación Cumplida, Programadores!" Mostrar los objetivos iniciales y discutir con los estudiantes si se cumplieron, enfocándose en la práctica de la mejora y presentación de proyectos de cronómetros con Micro:bit.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios de la Innovación, llegó el momento de celebrar nuestras increíbles presentaciones y proyectos! 🌟 Revisemos juntos nuestros objetivos: ¿Practicamos cómo analizar nuestros cronómetros, identificar áreas de mejora y optimizar su funcionalidad? ¿Agregamos nuevas funcionalidades, creamos pantallas interactivas y nos preparamos para presentar nuestros proyectos como verdaderos laboratorios de innovación? ¡Estoy seguro de que cada uno hizo un trabajo brillante! ¿Cómo se sienten al respecto?</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos, reforzando el trabajo en equipo, el aprendizaje mutuo y la creatividad en la programación y la presentación de proyectos de cronómetros con Micro:bit.</td>
+                        <td style="padding: 10px; vertical-align: top;">Hoy, todos fueron increíbles programadores de la innovación. Dieron vida a proyectos increíbles, exploraron el poder de la lógica y la creatividad en la programación, se prepararon para presentar sus proyectos y se ayudaron mutuamente como verdaderos genios. ¡Estoy muy orgulloso de todos los programadores de la innovación que hay aquí! ¡Un aplauso para su creatividad, lógica, dedicación y capacidad para aprender juntos!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (3 minutos):</strong> Proyectar (Diapositiva 23): "¡Honremos Nuestro Espacio de Innovación!" Dar instrucciones para recoger los materiales utilizados y organizar el espacio de trabajo.</td>
+                        <td style="padding: 10px; vertical-align: top;">Ahora, como verdaderos programadores de la innovación, debemos honrar nuestro espacio de trabajo. Recojan sus Micro:bits, tabletas y todos los materiales que usamos, y dejen el aula lista para nuevas aventuras de programación e innovación. ¡Recuerden que cuidar nuestro espacio es parte de la magia de la creación, la innovación y la presentación!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+   </div> <!-- Cierre del container -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
